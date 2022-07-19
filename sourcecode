@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <ctype.h>
+
+int main()
+{
+   int i,j,temp,n;
+   int ans[10];
+   int length = 10;
+
+   printf("Original list:");
+   for(i=0;i<length;i++)
+   {
+      ans[i] = rand();
+       printf("%d ",ans[i]);
+   }
+
+   for(i=0;i<length;i++)
+   {
+       for (j=0;j<(length-1);j++)
+       {
+           if(ans[j]>ans[j+1])
+           {
+              int temp = ans[j];
+               ans[j]=ans[j+1];
+               ans[j+1]=temp;
+           }
+
+       }
+   }
+
+        printf("\nAscending list:");
+        for(i=0;i<10;i++)
+        {
+            printf("%d ", ans[i]);
+        }
+         for(i=0;i<length;i++)
+   {
+       for (j=0;j<(length-1);j++)
+       {
+           if(ans[j]<ans[j+1])
+           {
+              int temp = ans[j];
+               ans[j]=ans[j+1];
+               ans[j+1]=temp;
+           }
+
+       }
+   }
+
+        printf("\nDescending list:");
+        for(i=0;i<10;i++)
+        {
+            printf("%d ", ans[i]);
+        }
+
+
+
+    return 0;
+}
